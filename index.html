@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	body,p,h3{padding: 0; margin: 0;}
+	#box{width: 960px; height: 330px; padding: 10px; background: silver; margin: 50px auto;position: relative;}
+	section{width: 145px; height: 80px; margin-bottom: 3px; }
+	section div{display: none; width: 810px; height: 330px; background: skyblue; position: absolute; left: 155px; top: 13px;}
+	section h3{width: 145px; height: 80px; line-height: 80px; text-align: center;  background: fuchsia;}
+	.active{display: block;}
+	.show{background: blue;}
+	div{ position: relative;}
+	strong{display: block;width: 1px; height: 297px;}
+	div p{height: 30px; margin-right: 2px;  float: left; }
+	img{width: 810px; height: 300px; display: none; position: absolute;left: 0; top: -3px;}
+	span{float: left;height: 30px; line-height: 30px; text-align: center; color: #fff; background: fuchsia; }
+	#wrap1 p {width: 200px; }
+	#wrap1 span {width: 200px; }
+	#wrap2 p {width: 160px; }
+	#wrap2 span {width: 160px; }
+	#wrap3 p {width: 133px; }
+	#wrap3 span {width: 133px; }
+	#wrap4 p {width: 268px; }
+	#wrap4 span {width: 268px; }
+</style>
+<script>
+	function $(selector,content){
+		if(selector.charAt(0)=="#"){
+			return document.getElementById(selector.substr(1));
+		}else{
+			var A = content || document;
+			return A.getElementsByTagName(selector);
+		};
+	};
+	window.onload = function (){
+		var oBox = $("#box");
+		var aH3 = $("h3",oBox);
+		var aDiv = $("div",oBox);
+		var aWrap1 = $("#wrap1");
+		var aSpan1 = $("span",aWrap1);
+		var aImg1 = $("img",aWrap1);	
+//		alert(aImg1.length)
+		var aWrap2 = $("#wrap2");
+		var aSpan2 = $("span",aWrap2);
+		var aImg2 = $("img",aWrap2);
+		var aWrap3 = $("#wrap3");
+		var aSpan3 = $("span",aWrap3);
+		var aImg3 = $("img",aWrap3);
+		var aWrap4 = $("#wrap4");
+		var aSpan4 = $("span",aWrap4);
+		var aImg4 = $("img",aWrap4);
+		
+		LaLa(aH3,aDiv,"onclick");
+		LaLa(aSpan1,aImg1,"onclick");
+		LaLa(aSpan2,aImg2,"onclick");
+		LaLa(aSpan3,aImg3,"onmouseover");
+		LaLa(aSpan4,aImg4,"onmouseover");
+
+		function LaLa(actionObj,isActionObj,evName){
+			for(var i=0;i<actionObj.length;i++){
+				actionObj[i].index = i ;
+				actionObj[i][evName] = function (){
+					for(var j=0;j<actionObj.length;j++){
+						actionObj[j].style.background = "fuchsia";
+						isActionObj[j].style.display = "none";
+					};
+					this.style.background = "blue";
+					isActionObj[this.index].style.display = "block";
+				};
+			};
+		};
+	};
+</script>
+</head>
+<body>
+<section id="box">
+	<section id="wrap1">
+		<h3 class="show">最热团购</h3>
+		<div class="active">
+			<p>
+				<strong></strong>
+				<span class="show">选项卡1</span>
+				<img src="img/a1 (1).jpg" class="active"/>
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡2</span>
+				<img src="img/a1 (2).jpg" />
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡3</span>
+				<img src="img/a1 (3).jpg" />
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡4</span>
+				<img src="img/a1 (4).jpg" />
+			</p>
+		</div>
+	</section>
+	<section id="wrap2">
+		<h3>商城特惠</h3>
+		<div>
+			<p>
+				<strong></strong>
+				<span class="show">选项卡1</span>
+				<img src="img/a1 (4).jpg" class="active"/>
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡2</span>
+				<img src="img/a1 (2).jpg" />
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡3</span>
+				<img src="img/a1 (3).jpg" />
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡4</span>
+				<img src="img/a1 (1).jpg" />
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡5</span>
+				<img src="img/a1 (7).jpg" />
+			</p>
+		</div>
+	</section>
+	<section id="wrap3">
+		<h3>名品推荐</h3>
+		<div>
+			<p>
+				<strong></strong>
+				<span class="show">选项卡1</span>
+				<img src="img/a1 (5).jpg" class="active"/>
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡2</span>
+				<img src="img/a1 (6).jpg" />
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡3</span>
+				<img src="img/a1 (7).jpg" />
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡4</span>
+				<img src="img/a1 (8).jpg" />
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡5</span>
+				<img src="img/a1 (1).jpg" />
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡6</span>
+				<img src="img/a1 (2).jpg" />
+			</p>
+		</div>
+	</section>
+	<section id="wrap4">
+		<h3>最新活动</h3>
+		<div>
+			<p>
+				<strong></strong>
+				<span class="show">选项卡1</span>
+				<img src="img/a1 (9).jpg" class="active"/>
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡2</span>
+				<img src="img/a1 (1).jpg" />
+			</p>
+			<p>
+				<strong></strong>
+				<span>选项卡3</span>
+				<img src="img/a1 (2).jpg" />
+			</p>
+			
+		</div>
+	</section>
+</section>
+</body>
+</html>
